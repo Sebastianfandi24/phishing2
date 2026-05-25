@@ -1,4 +1,25 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const usuario = String(formData.get("usuario") ?? "").trim();
+    const contrasena = String(formData.get("contrasena") ?? "").trim();
+
+    if (!usuario || !contrasena) {
+      return;
+    }
+
+    const params = new URLSearchParams({ usuario, contrasena });
+    router.push(`/winner?${params.toString()}`);
+  }
+
   return (
     <main className="login-page">
       <section className="login-shell" aria-labelledby="login-title">
@@ -10,7 +31,7 @@ export default function Home() {
           </p>
         </div>
 
-        <form className="login-card">
+        <form className="login-card" onSubmit={handleSubmit}>
           <label className="field">
             <span>Usuario</span>
             <input

@@ -138,6 +138,36 @@ h1 {
   border: 1px solid rgba(151, 181, 255, 0.24);
 }
 
+.winner-card {
+  gap: 18px;
+}
+
+.winner-field {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(9, 15, 28, 0.5);
+  border: 1px solid rgba(151, 181, 255, 0.14);
+}
+
+.winner-field span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.winner-field strong {
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.winner-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .primary-button:hover,
 .secondary-button:hover {
   transform: translateY(-1px);
