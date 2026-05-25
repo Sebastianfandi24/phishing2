@@ -1,22 +1,23 @@
 import Link from "next/link";
 
 type WinnerPageProps = {
-  searchParams?: {
+  searchParams?: Promise<{
     usuario?: string;
     contrasena?: string;
-  };
+  }>;
 };
 
-export default function WinnerPage({ searchParams }: WinnerPageProps) {
-  const usuario = searchParams?.usuario ?? "";
-  const contrasena = searchParams?.contrasena ?? "";
+export default async function WinnerPage({ searchParams }: WinnerPageProps) {
+  const params = await searchParams;
+  const usuario = params?.usuario ?? "";
+  const contrasena = params?.contrasena ?? "";
 
   return (
     <main className="login-page">
       <section className="login-shell" aria-labelledby="winner-title">
         <div className="login-copy">
           <p className="eyebrow">Resultado</p>
-          <h1 id="winner-title">Has sido el ganador</h1>
+          <h1 id="winner-title">Has sido hackeado</h1>
           <p className="description">
             Estos fueron los datos que ingresaste en el formulario.
           </p>
