@@ -25,7 +25,7 @@ export default function Home() {
       <section className="login-shell" aria-labelledby="login-title">
         <div className="login-copy">
           <p className="eyebrow">Acceso seguro</p>
-          <h1 id="login-title">Debe iniciar sesión</h1>
+          <h1 id="login-title">Correo institucional USB</h1>
           <p className="description">
             Ingrese su usuario y contraseña para continuar.
           </p>
