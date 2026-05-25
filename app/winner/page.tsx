@@ -1,30 +1,24 @@
-// app/hackeado/page.tsx
-
 import Link from "next/link";
 
-type HackeadoPageProps = {
+type WinnerPageProps = {
   searchParams?: {
     usuario?: string;
     contrasena?: string;
   };
 };
 
-export default function HackeadoPage({
-  searchParams,
-}: HackeadoPageProps) {
+export default function WinnerPage({ searchParams }: WinnerPageProps) {
   const usuario = searchParams?.usuario ?? "";
   const contrasena = searchParams?.contrasena ?? "";
 
   return (
     <main className="login-page">
-      <section className="login-shell" aria-labelledby="hack-title">
+      <section className="login-shell" aria-labelledby="winner-title">
         <div className="login-copy">
-          <p className="eyebrow">Sistema comprometido</p>
-
-          <h1 id="hack-title">Has sido hackeado</h1>
-
+          <p className="eyebrow">Resultado</p>
+          <h1 id="winner-title">Has sido el ganador</h1>
           <p className="description">
-            Esta página muestra la información que escribiste en el formulario.
+            Estos fueron los datos que ingresaste en el formulario.
           </p>
         </div>
 

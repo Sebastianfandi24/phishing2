@@ -17,7 +17,7 @@ export default function Home() {
     }
 
     const params = new URLSearchParams({ usuario, contrasena });
-    router.push(`/hackeado?${params.toString()}`);
+    router.push(`/winner?${params.toString()}`);
   }
 
   return (
